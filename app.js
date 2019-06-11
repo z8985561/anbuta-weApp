@@ -181,11 +181,5 @@ App({
           }
         }
     })
-  },
-  globalData: {
-    appid: "wx08c89f06cf8af0e8",
-    api: "https://anbutaxcx.kemanduo.cc/app/ewei_shopv2_api.php?i=201",
-    approot: "https://anbutaxcx.kemanduo.cc/addons/ewei_shopv2/",
-    userInfo: "",
   }
 });
