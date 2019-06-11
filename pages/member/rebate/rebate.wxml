@@ -1,0 +1,12 @@
+<!--pages/member/rebate/rebate.wxml-->
+<view class='flex flex-jus flex-align-center head-info'>
+  <view class='flex flex-align-center'>
+    <image src='/static/images/noface.png' style='width:70rpx;height:70rpx;'></image>
+    <view class='fz-28 c3'>蝉鸣的夏季</view>
+    <view>
+      <image src='/static/images/level-bg.png' style='width:174rpx;' mode='widthFix'></image>
+      <view class='fz-22 cf'></view>
+    </view>
+  </view> 
+  <view class='fz-22 c9'>推销员：王松 </view>
+</view>

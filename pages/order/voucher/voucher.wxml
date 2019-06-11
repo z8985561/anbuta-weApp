@@ -1,0 +1,19 @@
+<!--pages/order/voucher/voucher-->
+<view class='flex flex-center flex-align-center' style='height:100%;'>
+  <block wx:if="{{!voucher}}">
+    <view class='fui-uploader' bindtap='upload' data-type="image"></view>
+  </block>
+  <block wx:if="{{voucher}}">
+    <view class='fui-images'>
+      <image class='image long' src='{{voucher}}' mode="widthFix"  bindtap='upload' data-type="image-preview"></image>
+      <view class='image-remove'  bindtap='upload' data-type="image-remove">
+        <text class="icox icox-close"></text>
+      </view>
+    </view>
+  </block>
+</view>
+<view class='fui-footer'>
+  <view class='btn block btn-danger' bindtap='submit'>
+    上传凭证
+  </view>
+</view>

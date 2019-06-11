@@ -1,0 +1,35 @@
+<view class="fui-header plr-20">
+  <view class='flex flex-align-center'>
+    <image src='{{goodsInfo.thumb}}' style='width:110rpx;height:110rpx;'></image>
+    <view class='ml-20 c9 fz-30' style='flex:1'>{{goodsInfo.title}}</view>
+  </view>
+</view>
+<view class='option-content'>
+  <scroll-view class='left' scroll-y style='height:100%;width:200rpx;'>
+    <block wx:for="{{goodsInfo.option}}" wx:key="index">
+      <view bindtap='changeActive' class='{{active == index ? "active":""}}' data-index="{{index}}">{{item.title}}</view>
+    </block>
+  </scroll-view>
+  <scroll-view class='right' scroll-y style='flex:1;height:100%;'>
+    <block wx:for="{{goodsInfo.option[active].children}}" wx:key="index">
+      <view class='flex flex-jus flex-align-center item'>
+        <view class='fz-28 c6'>{{item.title}}</view>
+        <view class='fz-28 c9'>库存{{item.stock}}</view>
+        <view class='stepper'>
+          <view class='minus' bindtap='number' data-action="minus"  data-max="{{item.stock}}" data-index="{{index}}">-</view>
+          <input class='num shownum' value='{{item.total||0}}' bindblur='inputNumber' type='number' data-max="{{item.stock}}" data-index="{{index}}"></input>
+          <view class='plus' bindtap='number' data-action="plus" data-max="{{item.stock}}" data-index="{{index}}">+</view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+<view class='fui-footer flex flex-jus flex-align-center'>
+  <view class='p-20'>
+    <view class='fz-30 c9'>共
+      <text class='c3'>{{sumNumber}}</text> 件商品 合计：
+      <text style='color:#C14343;'>{{sumPrice}}</text>
+    </view>
+  </view>
+  <view bindtap='submit' class='btn btn-danger' style="width:200rpx;">确定</view>
+</view>

@@ -1,0 +1,79 @@
+/* pages/goods/picker-spec/picker-spec.wxss */
+page {
+  background-color: #fff;
+}
+
+.fui-header {
+  height: 160rpx;
+  background-color: #fff;
+}
+
+.option-content {
+  position: fixed;
+  top: 160rpx;
+  bottom: 100rpx;
+  left: 0;
+  right: 0;
+  display: flex;
+}
+
+.option-content .left {
+  background: rgba(248, 248, 248, 1);
+}
+
+.option-content .left view {
+  position: relative;
+  padding: 30rpx 0;
+  color: #999;
+  text-align: center;
+}
+
+.option-content .left view.active {
+  color: #ff5355;
+}
+
+.option-content .left view.active:before {
+  position: absolute;
+  content: " ";
+  left: 0;
+  top: 50%;
+  width: 6rpx;
+  height: 44rpx;
+  background-color: #ff5355;
+  transform: translateY(-50%);
+}
+
+.stepper {
+  display: flex;
+}
+
+.stepper .minus, .stepper .plus {
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #999;
+  font-size: 32rpx;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 2rpx;
+  border: 1px solid rgba(221, 221, 221, 1);
+}
+.stepper .shownum{
+  margin: 0 2rpx;
+  width: 110rpx;
+  min-height: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  color: #333;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 2rpx;
+  border: 1px solid rgba(221, 221, 221, 1);
+}
+.option-content .right{
+  flex: 1;
+}
+.option-content .right .item{
+  padding: 30rpx 20rpx 30rpx 40rpx;
+  border-bottom: 1px solid #eee;
+}

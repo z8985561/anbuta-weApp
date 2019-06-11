@@ -1,0 +1,38 @@
+/* pages/dealer/apply/apply.wxss */
+@import "../../common/city-picker.wxss";
+page{
+  background-color: #fff;  
+}
+.fui-footer{
+  height: 150rpx;
+  box-shadow:none;
+}
+.fui-cell-group{
+  margin-top: 0;
+}
+.fui-cell-group .fui-cell{
+  padding: 30rpx 20rpx;
+}
+.fui-cell-group .fui-cell .fui-cell-label{
+  width: 200rpx;
+  color: #666;
+}
+.fui-cell-group .fui-cell:before{
+  left: 0;
+  right: 0;
+  background-color: #eee;
+}
+.checkbox{
+  display: flex;
+  margin: 0 0.5em;
+}
+.checkbox checkbox{
+  width:36rpx;
+  height:36rpx;
+  margin-right: 20rpx;
+}
+/*checkbox 选项框大小  */
+checkbox .wx-checkbox-input {
+  width:36rpx;
+  height:36rpx;
+}

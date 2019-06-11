@@ -1,0 +1,35 @@
+<wxs src="./dealer-list.wxs" module="mod" />
+<view class='fui-header'>
+  <view class='sreach-box'>
+    <view class='text-center' style='width:60rpx;'>
+      <text class='icox icox-search fz-32 cc'></text>
+    </view>
+    <input type='text' class='fz-24 c3' class='sreach-input' placeholder='请输入关键词搜索' placeholder-class='fz-24 cc' bindconfirm="search"></input>
+  </view>
+</view>
+<view class='page header'>
+  <block wx:if="{{!list.length}}">
+    <view class='center'>
+      <view class='empty-tip'>
+        <image class='light' src='/static/images/icon/lights-128.png'></image>
+        <view class='text-cancel'>暂时没有任何数据</view>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{list.length}}" wx:for="{{list}}" wx:key="index">
+  <view class='fui-cell-group'>
+    <navigator class='fui-cell' url='/pages/dealer/dealer-order-list/dealer-order-list?mid={{item.id}}' hover-class='none'>
+      <view class='fui-cell-label'>
+        <image src='{{item.avatar}}' style='width:70rpx;height:70rpx;border-radius:50%;'></image>
+      </view>
+      <view class='fui-cell-info flex flex-align-center'>
+        <view class='fz-28 c3 text-hide' style='max-width:210rpx;'>{{item.nickname}}</view>
+        <view class='level'>{{item.levelname}}</view>
+      </view>
+      <view class='fui-cell-remark noremark'>
+        <view class='fz-22 c9'>{{mod.intercept(item.regional)}}</view>
+      </view>
+    </navigator>
+  </view>
+  </block>
+</view>

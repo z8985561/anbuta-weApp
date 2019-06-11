@@ -1,0 +1,46 @@
+/* pages/dealer/dealer-list/dealer-list.wxss */
+
+page {
+  background-color: #fff;
+}
+
+.page {
+  min-height: auto;
+  background-color: #fff;
+}
+
+.fui-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border: none;
+}
+.fui-header:after{
+  display: none;
+}
+.fui-header .sreach-box {
+  display: flex;
+  align-items: center;
+  width: 710rpx;
+  height: 60rpx;
+  background: rgba(248, 248, 248, 1);
+  border-radius: 4rpx;
+}
+
+.fui-cell-group {
+  margin: 0;
+}
+
+.fui-cell-group:before {
+  display: none;
+}
+
+.fui-cell-group .fui-cell{
+  padding:25rpx 20rpx;
+}
+.fui-cell-group .fui-cell .fui-cell-label{
+  width: 100rpx;
+}
+.fui-cell-group .fui-cell:before { content: " "; position: absolute; left: 0; right: 0; top: 0; height: 1px; border-top: 1px solid #eee; color: #eee; -webkit-transform-origin: 0 0; transform-origin: 0 0; -webkit-transform: scaleY(0.5); transform: scaleY(0.5); }
+

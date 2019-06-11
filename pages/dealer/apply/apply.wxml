@@ -1,0 +1,62 @@
+<form bindsubmit="formSubmit" report-submit='true'>
+  <view class="fui-cell-group">
+    <view class='fui-cell'>
+      <view class='fui-cell-label'>公司名称</view>
+      <view class='fui-cell-info'>
+        <input class='fui-input' placeholder-style='color:#ccc;' placeholder='请输入公司名称' name="companyName" value='{{qualification.companyName}}'></input>
+      </view>
+      <view class='fui-cell-remark noremark'></view>
+    </view>
+    <view class='fui-cell'>
+      <view class='fui-cell-label'>法人姓名</view>
+      <view class='fui-cell-info'>
+        <input class='fui-input' placeholder-style='color:#ccc;' placeholder='请输入法人姓名' name="corporationName" value='{{qualification.corporationName}}'></input>
+      </view>
+      <view class='fui-cell-remark noremark'></view>
+    </view>
+    <view class='fui-cell'>
+      <view class='fui-cell-label'>法人手机</view>
+      <view class='fui-cell-info'>
+        <input class='fui-input' placeholder-style='color:#ccc;' placeholder='请输入法人手机号码' type='number' maxlength="11" name="corporationMobile" value='{{qualification.corporationMobile}}'></input>
+      </view>
+      <view class='fui-cell-remark noremark'></view>
+    </view>
+    <view class='fui-cell'>
+      <view class='fui-cell-label'>所在地区</view>
+      <view class='fui-cell-info' bindtap='selectArea'>
+          <view wx:if="{{!detail.province && !qualification.regional}}" style='color:#ccc;'>请选择省/市/县</view>
+          <view wx:if="{{detail.province}}">
+            {{detail.province+" "+detail.city+" "+detail.area}}
+          </view>
+          <view wx:if="{{!detail.province&&qualification.regional}}">{{qualification.regional}}</view>
+          <input name="regional" value='{{detail.province ? detail.province+" "+detail.city+" "+detail.area : qualification.regional}}' style='display:none'></input>
+      </view>
+      <view class='fui-cell-remark'></view>
+    </view>
+    <view class='fui-cell'>
+      <view class='fui-cell-label'>详细地址</view>
+      <view class='fui-cell-info'>
+        <input class='fui-input' placeholder-style='color:#ccc;' placeholder='请输入详细地址' name="workPath" value='{{qualification.workPath}}'></input>
+      </view>
+      <view class='fui-cell-remark noremark'></view>
+    </view>
+    <view class='fui-cell'>
+      <view class='fui-cell-label'>所属推销员Id</view>
+      <view class='fui-cell-info'>
+        <input class='fui-input' placeholder-style='color:#ccc;' placeholder='请输入推销员的ID' type='number' name="salesmanId" value='{{qualification.salesmanId}}'></input>
+      </view>
+      <view class='fui-cell-remark noremark'></view>
+    </view>
+  </view>
+  <view class='fui-footer'>
+    <checkbox-group bindchange="checkboxChange" name="agreement">
+      <label class="checkbox">
+        <checkbox value="{{1}}" checked="{{ifCheck}}" color="#FF5355"/>
+        <view style='font-size:30rpx;color:#999;'>我已阅读并同意</view>
+        <view data-url='url' catchtap='toAgreement' style='color:#FF5355;'>《入驻申请须知协议》</view>
+      </label>
+    </checkbox-group>
+    <button class='btn block btn-danger' form-type="submit">提交审核</button>
+  </view>
+</form>
+<include src="/pages/common/city-picker.wxml"></include>

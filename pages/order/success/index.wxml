@@ -1,0 +1,7 @@
+<!--pages/order/success/index.wxml-->
+<view class='text-center' style='padding-top:100rpx;padding-bottom:50rpx;'>
+  <image src='/static/images/group_success.png' style='width:310rpx;height:310rpx;'></image>
+</view>
+<view class='text-center fz-30 c9'>您的订单已提交成功请尽快</view>
+<view class='text-center fz-30 c9'>在订单详情上上传支付凭证以便尽快核实发货</view>
+<navigator class='btn block btn-danger' url='/pages/order/detail/index?id={{id}}'>去上传</navigator>

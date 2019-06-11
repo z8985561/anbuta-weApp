@@ -1,0 +1,4 @@
+/* pages/member/rebate/rebate.wxss */
+.head-info{
+  padding:  40rpx 20rpx;
+}

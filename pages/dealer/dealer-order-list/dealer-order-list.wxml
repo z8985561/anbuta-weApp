@@ -1,0 +1,50 @@
+<!--pages/dealer/dealer-order-list/dealer-order-list.wxml-->
+<view class='fui-cell-group mb-20'>
+  <view class='fui-cell'>
+    <view class='fui-cell-label' style='width:100rpx;'>
+      <image src='{{member.avatar}}' style='width:70rpx;height:70rpx;border-radius:50%;'></image>
+    </view>
+    <view class='fui-cell-info flex flex-align-center'>
+      <view class='fz-28 c3 text-hide' style='max-width:210rpx;'>{{member.nickname}}</view>
+      <view class='level'>{{member.levelname}}</view>
+    </view>
+    <view class='fui-cell-remark noremark'>
+      <view class='fz-24' style='color:#FF5355;'>总金额：{{ordermoney}}</view>
+    </view>
+  </view>
+</view>
+<view class='fui-cell-group' style='border-bottom: 1px solid #EEEEEE;'>
+  <view class='fui-cell'>
+    <view class='fui-cell-label'>
+      <view class='fz-30 c3'>历史订单</view>
+    </view>
+    <view class='fui-cell-info'></view>
+    <view class='fui-cell-remark noremark'>
+      <picker mode="date" fields="month" bindchange="chooseTime" end="{{endTime}}">
+        <view class='picker'>{{time}}
+          <text class='icox icox-arrow-down fz-22 c9'></text>
+        </view>
+      </picker>
+    </view>
+  </view>
+</view>
+<view class='order-list'>
+  <block wx:for="{{list}}">
+  <navigator class='order-item' hover-class='none' url="../dealer-order-detail/dealer-order-detail?id={{item.id}}">
+    <view class='order-status'>
+      <view class='fz-24 c9'>{{item.createtime}}</view>
+      <view class='status-str'>{{item.statusstr}}</view>
+    </view>
+    <view class='flex flex-jus'>
+      <image src='{{item.nogift[0].thumb}}' style='width:110rpx;height:110rpx;'></image>
+      <view class='flex flex-column flex-jus' style='width:580rpx;'>
+        <view class='fz-28 c3 text-hide'>{{item.nogift[0].title}}</view>
+        <view class='flex flex-jus'>
+          <view class='fz-28' style='color:#FF5355'>¥{{item.price}}</view>
+          <view class='fz-28 c9'>X{{item.total}}</view>
+        </view>
+      </view>
+    </view>
+  </navigator>
+  </block>
+</view>

@@ -1,0 +1,84 @@
+<view class='order-list'>
+  <view class='order-item'>
+    <block wx:for="{{nogift}}" wx:key="index">
+      <view class='flex flex-jus mb-20'>
+        <image src='{{item.thumb}}' style='width:110rpx;height:110rpx;'></image>
+        <view class='flex flex-column flex-jus' style='width:580rpx;'>
+          <view class='fz-28 c3 text-hide'>{{item.title}}</view>
+          <view class='fz-24 c6'>规格：{{item.optionname}}</view>
+          <view class='flex flex-jus'>
+            <view class='fz-28' style='color:#FF5355'>¥{{item.price}}</view>
+            <view class='fz-28 c9'>X{{item.total}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<view class='fui-cell-group'>
+  <view class='fui-cell'>
+    <view class='fui-cell-label'>
+      <text class='fz-26 c9'>订单状态</text>
+    </view>
+    <view class='fui-cell-info'>
+      <text class='fz-26 c9'>{{order.statusstr}}</text>
+    </view>
+  </view>
+  <view class='fui-cell'>
+    <view class='fui-cell-label'>
+      <text class='fz-26 c9'>订单总计</text>
+    </view>
+    <view class='fui-cell-info'>
+      <text class='fz-26 c9'>￥{{order.price}}</text>
+    </view>
+  </view>
+  <view class='fui-cell'>
+    <view class='fui-cell-label'>
+      <text class='fz-26 c9'>订单总数</text>
+    </view>
+    <view class='fui-cell-info'>
+      <text class='fz-26 c9'>{{order.total}}</text>
+    </view>
+  </view>
+  <view class='fui-cell'>
+    <view class='fui-cell-label'>
+      <text class='fz-26 c9'>订单编号</text>
+    </view>
+    <view class='fui-cell-info'>
+      <text class='fz-26 c9'>{{order.ordersn}}</text>
+    </view>
+  </view>
+  <view class='fui-cell'>
+    <view class='fui-cell-label'>
+      <text class='fz-26 c9'>创建时间</text>
+    </view>
+    <view class='fui-cell-info'>
+      <text class='fz-26 c9'>{{order.createtime}}</text>
+    </view>
+  </view>
+  <view class='fui-cell' wx:if="{{order.paytime}}">
+    <view class='fui-cell-label'>
+      <text class='fz-26 c9'>支付时间</text>
+    </view>
+    <view class='fui-cell-info'>
+      <text class='fz-26 c9'>{{order.paytime}}</text>
+    </view>
+  </view>
+  <view class='fui-cell' wx:if="{{order.sendtime}}">
+    <view class='fui-cell-label'>
+      <text class='fz-26 c9'>发货时间</text>
+    </view>
+    <view class='fui-cell-info'>
+      <text class='fz-26 c9'>{{order.sendtime}}</text>
+    </view>
+  </view>
+  <view class='fui-cell' wx:if="{{order.finishtime}}">
+    <view class='fui-cell-label'>
+      <text class='fz-26 c9'>完成时间</text>
+    </view>
+    <view class='fui-cell-info'>
+      <text class='fz-26 c9'>{{order.finishtime}}</text>
+    </view>
+  </view>
+</view>

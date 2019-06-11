@@ -1,0 +1,9 @@
+<!--pages/dealer/apply/check.wxml-->
+<view class='mb-80' style='padding-top:250rpx;'>
+<view class='text-center mb-80'>
+  <image style='width:249rpx;height:263rpx;' src='/static/images/order-01.png'></image>
+</view>
+  <view class='c6 fz-32 text-center'>您的申请已提交成功</view>
+  <view class='c9 fz-32 text-center' >审核结果将会在公众号发送提醒</view>
+</view>
+<navigator open-type="redirect" class='btn block btn-danger' url='/pages/index/index'>我知道了</navigator>

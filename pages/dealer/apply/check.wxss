@@ -1,0 +1,4 @@
+/* pages/dealer/apply/check.wxss */
+page{
+  background-color: #fff;
+}

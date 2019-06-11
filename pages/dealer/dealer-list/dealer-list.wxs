@@ -1,0 +1,8 @@
+var intercept = function (regional){
+  var arr = regional.split(" ");
+  var len = arr.length-1;
+  return arr[len - 1] + " " + arr[len]
+}
+module.exports = {
+  intercept: intercept
+}

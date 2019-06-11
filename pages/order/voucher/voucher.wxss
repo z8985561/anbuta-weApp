@@ -1,0 +1,12 @@
+/* pages/order/voucher/voucher */
+page{
+  background-color: #fff;
+}
+.fui-images{
+  position: relative;
+}
+.image-remove{
+  position: absolute;
+  top: -12rpx;
+  right: -12rpx;
+}
